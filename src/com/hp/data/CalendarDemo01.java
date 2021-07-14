@@ -15,6 +15,7 @@ public class CalendarDemo01 {
         //创建对象  不仅仅只有new，还有   类的实例方法
         //calendar包含了date的大部分功能 是date的升级版
         Calendar instance = Calendar.getInstance();
+
         System.out.println("instance = " + instance);
         instance.add(Calendar.YEAR,10);
         System.out.println("instance.getTime() = " + instance.getTime());
