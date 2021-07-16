@@ -1,7 +1,5 @@
 package com.hp.day08;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 
 public class Test07 {
