@@ -2,8 +2,8 @@ package com.hp.day08;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class JDK8demo01 {
@@ -34,7 +34,11 @@ public class JDK8demo01 {
         //中间操作
         //stream2.distinct().forEach(System.out::println);//去重
         //stream2.filter(a -> a.getAge()>30).forEach(System.out::println);//过滤
-
+        //stream2.limit(2).forEach(System.out::println);//截取2条数据
+        //stream2.map(StaffInfo::getHiredate).forEach(System.out::println);//映射    重点！！！
+        //stream2.skip(2).forEach(System.out::println);//跳过两条数据遍历
+        //stream2.sorted(Comparator.comparingInt(StaffInfo::getAge)).forEach(System.out::println);//排序
+        stream2.sorted(Comparator.comparingInt(StaffInfo::getAge).reversed()).forEach(System.out::println);//倒序
         //终止操作
         //void forEach(Consumer<?  super T> action):遍历数据
         //stream2.forEach(System.out::println);
@@ -50,6 +54,13 @@ public class JDK8demo01 {
        // System.out.println("count = " + count);
         /*StaffInfo staffInfo = stream2.findAny().get();//查找任意一个
         System.out.println("staffInfo = " + staffInfo);*/
+      /*  StaffInfo staffInfo = stream2.max(Comparator.comparingInt(StaffInfo::getAge)).get();//最大值
+        System.out.println("staffInfo = " + staffInfo);*/
+      //Integer integer = stream2.map(StaffInfo::getAge).reduce(Math::addExact).get();//规约 求年龄总和
+        //System.out.println("integer = " + integer);
+       // Integer collect = stream2.collect(Collectors.summingInt(StaffInfo::getAge));//年龄总和
+      //  System.out.println("collect = " + collect);
+
     }
 
 }
