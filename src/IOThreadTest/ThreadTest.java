@@ -5,7 +5,7 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-
+//下载网络图片
 public class ThreadTest extends Thread {
     private  String name;//保存图片的名字
     private String url;//网络图片地址
